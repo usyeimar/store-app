@@ -40,7 +40,7 @@ class Controller{
     function getPost($name){
         return $_POST[$name];
     }
-    function redirect($url,$mensajes){
+    function redirect($route,$mensajes){
         $data =  [];
         $params = '';
 
@@ -52,7 +52,7 @@ class Controller{
         if($params != ''){
             $params = '?' . $params;
         }
-        header('location: ' . constant('URL') . $url . $params);
+        header('location: ' . constant('URL') .'/'. $route . $params);
     }
     }
 ?>

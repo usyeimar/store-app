@@ -1,5 +1,5 @@
 <?php
-class Home extends Controller{
+class Home extends SessionController{
     function __construct()
     {
         parent::__construct();

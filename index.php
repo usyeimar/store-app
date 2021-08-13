@@ -1,9 +1,23 @@
 <?php
-require_once'App/DB.php';
-require_once'App/controller.php';
-require_once'App/view.php';
-require_once'App/model.php';
-require_once'App/app.php';
+error_reporting(E_ALL); // Error/Exception engine, always use E_ALL
+
+ini_set('ignore_repeated_errors', TRUE); // always use TRUE
+
+ini_set('display_errors', FALSE); // Error/Exception display, use FALSE only in production environment or real server. Use TRUE in development environment
+
+ini_set('log_errors', TRUE); // Error/Exception file logging engine.
+
+ini_set("error_log", "./php-error.log");
+error_log( "Sytem Start, errors!" );
+
+require_once'app/DB.php';
+require_once'class/errormessages.php';
+require_once'class/successmessages.php';
+require_once'app/controller.php';
+require_once'app/view.php';
+require_once'class/sessioncontroller.php';
+require_once'app/model.php';
+require_once'app/app.php';
 require_once'Config/config.php';
 $app = new App();
 

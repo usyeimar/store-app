@@ -15,9 +15,16 @@
 </head>
 
 <body>
-
+<?php 
+$this->showMessages();
+?>
     <div class="wrapper">
         <div id="formContent">
+             <!-- Icon -->
+             <div>
+                <img src="<?php echo constant('URL') ?>/public/login_libs/icon.svg" id="icon" alt="User Icon" />
+            </div>
+
             <!-- Tabs Titles -->
 
             <div>
@@ -26,11 +33,7 @@
                 </h4>
             </div>
 
-            <!-- Icon -->
-            <div>
-                <img src="<?php echo constant('URL') ?>/public/login_libs/icon.svg" id="icon" alt="User Icon" />
-            </div>
-
+           
             <!-- Login Form -->
             <form method="POST" action="login/auth">
                 <input type="text" id="txtUsuario" name="txtUsuario" placeholder="Usuario">

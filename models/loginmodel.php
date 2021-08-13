@@ -1,8 +1,8 @@
 <?php 
-class LoginModel{
+class LoginModel extends Model {
     function __construct()
     {
-           # code...
+        parent::__construct();
     }
 }
 
