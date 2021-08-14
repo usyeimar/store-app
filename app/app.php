@@ -8,7 +8,7 @@ function __construct()
     $url = explode('/',$url);
 
     if (empty($url[0])) {
-        error_log('App::construct -> Cargando los modelos atarves de la URL');
+        error_log('App::construct -> Cargando los modelos atraves de la URL');
         $ArchivoController = 'Controllers/login.php';
         require_once $ArchivoController;
         $controllers = new  Login();

@@ -7,11 +7,11 @@ class Usuarios extends Controller
         $this->view->datos = [];
         
     }
-    function render(){
-        $usuarios = $this->model->get();
-        $this->view->datos = $usuarios;
-        $this->view->render('usuarios/index'); 
-    }
+    // function render(){
+    //     $usuarios = $this->model->get();
+    //     $this->view->datos = $usuarios;
+    //     $this->view->render('usuarios/index'); 
+    // }
 
     function crearUsuario()
     {

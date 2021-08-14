@@ -1,6 +1,5 @@
 <?php
-class UserModel extends Model implements IModel
-{
+class UserModel extends Model implements IModel{
     private $id;
     private $username;
     private $password;
@@ -69,6 +68,7 @@ class UserModel extends Model implements IModel
                 $item->setBudget($p['Budget']);
                 $item->setPhoto($p['photo']);
                 $item->setName($p['name']);
+                $item->setEmail($p['email']);
                 $item->setCiudad($p['ciudad']);
                 $item->setDireccion($p['direccion']);
                 $item->setTelefono($p['telefono']);
@@ -93,9 +93,10 @@ class UserModel extends Model implements IModel
                 $this->setUsername($user['username']);
                 $this->setPassword($user['password']);
                 $this->setRole($user['role']);
-                $this->setBudget($user['Budget']);
+                $this->setBudget($user['budget']);
                 $this->setPhoto($user['photo']);
                 $this->setName($user['name']);
+                $this->setEmail($user['email']);
                 $this->setCiudad($user['ciudad']);
                 $this->setDireccion($user['direccion']);
                 $this->setTelefono($user['telefono']);
@@ -151,9 +152,10 @@ class UserModel extends Model implements IModel
         $this->username         = $array['username'];
         $this->password         = $array['password'];
         $this->role             = $array['role'];
-        $this->budget           = $array['Budget'];
+        $this->budget           = $array['budget'];
         $this->photo            = $array['photo'];
         $this->name             = $array['name'];
+        $this->email            = $array['email'];
         $this->ciudad           = $array['ciudad'];
         $this->direccion        = $array['direccion'];
         $this->telefono         = $array['telefono'];
@@ -196,6 +198,7 @@ class UserModel extends Model implements IModel
     public function setBudget($budget){                         $this->budget = $budget;}
     public function setPhoto($photo){                           $this->photo = $photo;}
     public function setName($name){                             $this->name = $name;}
+    public function setEmail($email) {                          $this->email= $email;}
     public function setPassword($password)
     {
         $this->password = $this->getHashedPassword($password);

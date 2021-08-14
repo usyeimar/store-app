@@ -10,13 +10,13 @@ class Session
         }
     }
 
-    public function setCurrentUserq($user)
+    public function setCurrentUser($user)
     {
         $_SESSION[$this->sessionName] = $user;
     }
     public function getCurrentUser()
     {
-        $_SESSION[$this->sessionName];
+        return $_SESSION[$this->sessionName];
     }
     public function closeSession()
     {

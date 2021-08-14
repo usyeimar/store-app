@@ -14,13 +14,17 @@ class Signup extends SessionController
     }
 
     function newUser(){
-        if($this->existPOST(['username', 'password'])){
+        if($this->existPOST(['username', 'password','email','direccion','telefono','fechanacimiento'])){
             
             $username = $this->getPost('username');
             $password = $this->getPost('password');
+            $email    = $this->getPost('email');
+            $direccion = $this->getPost('direccion');
+            $telefono = $this->getPost('telefono');
+            $fechanacimiento = $this->getPost('fechanacimiento');
             
             //validate data
-            if($username == '' || empty($username) || $password == '' || empty($password)){
+            if($username == '' || empty($username) || $password == '' || empty($password) || $email =='' || empty($email) || $direccion =='' || empty($direccion) || $telefono =='' || empty($telefono) || $fechanacimiento =='' || empty($fechanacimiento)){
                 // error al validar datos
                 //$this->errorAtSignup('Campos vacios');
                 $this->redirect('signup', ['error' => ErrorMessages::ERROR_SIGNUP_NEWUSER_EMPTY]);
@@ -30,6 +34,10 @@ class Signup extends SessionController
             $user->setUsername($username);
             $user->setPassword($password);
             $user->setRole("user");
+            $user->setEmail($email);
+            $user->setDireccion($direccion);
+            $user->setTelefono($telefono);
+            $user->setFechaNacimiento($fechanacimiento);
             
             if($user->exists($username)){
                 //$this->errorAtSignup('Error al registrar el usuario. Elige un nombre de usuario diferente');

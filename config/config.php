@@ -48,4 +48,4 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  define('PASSWORD','admindb1234');
  define('CHARSET','utf8mb4');
 
- define('COMPANY_NAME',"Cariniana");
+ define('COMPANY_NAME',"Store");

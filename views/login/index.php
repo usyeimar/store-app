@@ -35,9 +35,9 @@ $this->showMessages();
 
            
             <!-- Login Form -->
-            <form method="POST" action="login/auth">
-                <input type="text" id="txtUsuario" name="txtUsuario" placeholder="Usuario">
-                <input type="password" id="txtContrasena" name="txtContrasena" placeholder="Contraseña">
+            <form method="POST" action="login/authenticate">
+                <input type="text" id="txtUsuario" name="username" placeholder="Usuario" required>
+                <input type="password" id="txtContrasena" name="password" placeholder="Contraseña" required>
                 
                 <div class="loginButton">
                     <input type="submit" value="Iniciar Sesión">
@@ -47,13 +47,14 @@ $this->showMessages();
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-                <a class="underlineHover" href="login/register">No tienes cuenta, registrate.</a>
+                <a class="underlineHover" href="signup">No tienes cuenta, registrate.</a>
                 <br>
                 <a class="underlineHover" href="login/recover">¿Olvidaste la contraseña?</a>
             </div>
 
         </div>
     </div>
+    
 
    
 

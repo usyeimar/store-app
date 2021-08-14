@@ -40,14 +40,29 @@ require_once("Views/templates/HeaderAdmin.php");
                       <section>
 
 
-                        <div>
-                          <h1><i class="fas fa-sticky-note"></i> Clases</h1>
-                          <button class="btn btn-primary shadow-lg " type="button" data-toggle="modal" data-target="#ModalNotas"><i class="fas fa-plus-circle"></i> Nueva</button>
-                          <p>Pulsa el boton de + parar agregar registros.</p>
-                        </div>
                         
+                        <div class="wrapper">
+                          <section class="users">
+                            <header>
+                              <div class="content">
+                                <img src="<?php echo constant('URL')?>/public/images/usuario.png" alt="">
+                                <div class="details">
+                                 
+                                </div>
+                              </div>
+                            </header>
+                            <div class="search">
+                              <span class="text">Seleccione un usuario para iniciar el chat</span>
+                              <input type="text" placeholder="Ingrese el nombre para buscar ...">
+                              <button><i class="fas fa-search"></i></button>
+                            </div>
+                            <div class="users-list">
 
-                        
+                            </div>
+                          </section>
+                        </div>
+
+
 
 
                       </section>
@@ -69,5 +84,5 @@ require_once("Views/templates/HeaderAdmin.php");
   <?php
 
   require_once("Views/templates/FooterAdmin.php");
-  
+
   ?>

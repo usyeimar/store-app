@@ -1,7 +1,8 @@
 <?php
-require_once'class/session.php'; 
-class SessionController extends Controller
-{
+require_once'class/session.php';
+require_once'models/usermodel.php';
+
+class SessionController extends Controller{
     
     private $userSession;
     private $username;
@@ -142,7 +143,7 @@ class SessionController extends Controller
         $url = '';
         for($i = 0; $i < sizeof($this->sites); $i++){
             if($this->sites[$i]['role'] === $role){
-                $url = '/expense-app/'.$this->sites[$i]['site'];
+                $url = '/store-app/'.$this->sites[$i]['site'];
             break;
             }
         }
