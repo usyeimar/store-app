@@ -1,4 +1,5 @@
 <?php
+require_once'models/usermodel.php';
 class User extends SessionController
 {
     private $user;
@@ -90,13 +91,13 @@ class User extends SessionController
             return;
         }
         $photo = $_FILES['photo'];
-        $targetDir = 'public/img/photos';
+        $targetDir = 'public/img/photos/';
         $extension = explode('.', $photo['name']);
         $filename = $extension[sizeof($extension) -2];
         $ext = $extension[sizeof($extension) -1];
-        $hash = md5_file(Date('Ymdgi') . $filename) . '.' . $ext;
+        $hash = md5(Date('Ymdgi') . $filename) . '.' . $ext;
         $targetFile = $targetDir . $hash;
-        $uploadOK = false;
+        $uploadOK = 1;
         $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
         $check = getimagesize($photo['tmp_name']);
         if($check !== false){
@@ -110,7 +111,8 @@ class User extends SessionController
             return;
         }else{
             if(move_uploaded_file($photo['tmp_name'],$targetFile)){
-                $this->model->updatePhoto($hash,$this->user->getId());
+                $this->user->setPhoto($hash);
+                $this->user->update();
                 $this->redirect('user',[]);
                 return;
             }else{

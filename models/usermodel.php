@@ -127,11 +127,10 @@ class UserModel extends Model implements IModel{
         try {
             $query = $this->prepare('UPDATE tbusers SET username = :username, password = :password, budget = :budget, photo = :photo, name = :name, ciudad = :ciudad, direccion = :direccion, telefono = :telefono, fechanacimiento = :fechanacimiento  WHERE id = :id');
             $query->execute([
-                'id' =>                 $this->id,
-                'username' =>           $this->username,
-                'password' =>           $this->password,
-                'role' =>                $this->role,
-                'budget' =>             $this->budget,
+                'id' =>                  $this->id,
+                'username' =>            $this->username,
+                'password' =>            $this->password, 
+                'budget' =>              $this->budget,
                 'photo' =>               $this->photo,
                 'name' =>                $this->name,
                 'email' =>               $this->email,
@@ -142,7 +141,7 @@ class UserModel extends Model implements IModel{
             ]);
             return true;
         } catch (PDOException $e) {
-            error_log('USERMODEL::Update[tbusers]->PDOException' . $e);
+            error_log('USERMODEL::Update[tbusers]->' . $e);
             return false;
         }
     }

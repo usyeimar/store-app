@@ -42,6 +42,7 @@ $title  = $url[0];
 
   <!-- Styles -->
   <link rel="stylesheet" href="<?php echo constant('URL') ?>/Public/css/default.css">
+  <link rel="stylesheet" href="<?php echo constant('URL') ?>/Public/css/user.css">
 
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
