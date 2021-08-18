@@ -1,4 +1,5 @@
 <?php
+      
 $user = $this->d['user'];
 require_once("Views/templates/HeaderAdmin.php");
 ?>
@@ -8,11 +9,11 @@ require_once("Views/templates/HeaderAdmin.php");
         <?php
         require_once("Views/templates/SidebarAdmin.php");
         ?>
+
         <div class="w-100">
             <?php
             require_once("Views/templates/NavBarAdmin.php");
             ?>
-
             <!-- Page Content -->
             <div id="content" class="bg-grey w-100">
                 <section>
@@ -21,7 +22,6 @@ require_once("Views/templates/HeaderAdmin.php");
                             <div class="col-lg-11 my-1">
                                 <div class="card rounded-0">
                                     <div class="card-body">
-
                                         <section>
                                             <div class="row user">
                                                 <div class="col-md-12">
@@ -41,13 +41,14 @@ require_once("Views/templates/HeaderAdmin.php");
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!--Menu-->
                                                 <div class="col-md-3">
                                                     <div class="tile p-0">
                                                         <ul class="nav flex-column nav-tabs user-tabs">
                                                             <li class="nav-item"><a class="nav-link active" href="#info-user-container" data-toggle="tab">Personalizar Usuario</a></li>
                                                             <li class="nav-item"><a class="nav-link" href="#password-user-container" data-toggle="tab">Password</a></li>
                                                             <li class="nav-item"><a class="nav-link" href="#budget-user-container" data-toggle="tab">Presupuesto</a></li>
-
+                                                            <li class="nav-item"><a class="nav-link" href="#user-info-settings" data-toggle="tab">Mis Datos</a></li>
 
                                                         </ul>
                                                     </div>
@@ -57,7 +58,7 @@ require_once("Views/templates/HeaderAdmin.php");
 
                                                         <div class="tab-pane active" id="info-user-container">
 
-                                                            <form action=<?php echo constant('URL') . 'user/updateName' ?> method="POST">
+                                                            <form action=<?php echo constant('URL') . '/user/updateName' ?> method="POST">
                                                                 <div class="section">
                                                                     <label class="control-label" for="name">Nombre</label>
                                                                     <input class="form-control" type="text" name="name" id="name" class="" autocomplete="off" required value="<?php echo $user->getName() ?>">
@@ -65,15 +66,15 @@ require_once("Views/templates/HeaderAdmin.php");
                                                                     <div><input class="btn btn-primary" type="submit" value="Cambiar nombre" /></div>
                                                                 </div>
                                                             </form>
-                                                            
-                                                            <form class="form-group" action="<?php echo constant('URL') . 'user/updatePhoto' ?>" method="POST" enctype="multipart/form-data">
+
+                                                            <form class="form-group" action="<?php echo constant('URL') . '/user/updatePhoto' ?>" method="POST" enctype="multipart/form-data">
                                                                 <div class="section">
-                                                                    <label class="control-label" for="photo">Foto de perfil</label>
+                                                                    <div><label class="control-label" for="photo">Foto de perfil</label></div>
 
                                                                     <?php
                                                                     if (!empty($user->getPhoto())) {
                                                                     ?>
-                                                                        <img src="<?php echo constant('URL') ?>public/img/photos/<?php echo $user->getPhoto() ?>" width="50" height="50" />
+                                                                        <img src="<?php echo constant('URL') ?>/public/img/photos/<?php echo $user->getPhoto() ?>" width="50" height="50" />
                                                                     <?php
                                                                     }
                                                                     ?>
@@ -110,10 +111,52 @@ require_once("Views/templates/HeaderAdmin.php");
                                                                 </div>
                                                             </form>
                                                         </div>
+                                                        
+                                                        <div class="tab-pane fade" id="user-info-settings">
+                                                            <h4>Mi informacion <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#ModalUpdateUsuario" type="button"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button></h4>
+                                                            <table class="table table-bordered">
+                                                                <tbody>
+                                                                   
+                                                                    <tr>
+                                                                        <td>Nombre:</td>
+                                                                        <td><?php echo $user->getName(); ?></td>
+                                                                    </tr>
+                                                                    
+                                                                    <tr>
+                                                                        <td>Email(Usuario) :</td>
+                                                                        <td><?php echo $user->getEmail(); ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Presupuesto :</td>
+                                                                        <td><?php echo $user->getBudget(); ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Ciudad :</td>
+                                                                        <td><?php echo $user->getCiudad(); ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Direccion :</td>
+                                                                        <td><?php echo $user->getDireccion(); ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Telefono :</td>
+                                                                        <td><?php echo $user->getTelefono(); ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Fecha Nacimiento :</td>
+                                                                        <td><?php echo $user->getFechaNacimiento(); ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Role :</td>
+                                                                        <td><?php echo $user->getRole(); ?></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </section>
                                     </div>
                                 </div>
@@ -123,14 +166,8 @@ require_once("Views/templates/HeaderAdmin.php");
                 </section>
             </div>
         </div>
-
-
-        <?php
-        require_once("Views/Modals/CrearUsuario.php");
-        require_once("Views/Modals/SubirAvatar.php");
+        <?php 
         require_once("Views/templates/FooterAdmin.php");
-
-        //require_once("./Core/ActualizarAvatar.php");
 
         ?>
     </div>
