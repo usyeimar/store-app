@@ -12,7 +12,7 @@ class User extends SessionController
 
     function render()
     {
-        $this->view->render('user/index', ['user' => $this->user]);
+        $this->view->render('user/index', ['user' => $this->user]);//Se le pasa a la vista el array de el usuario
     }
 
     function updateBudget()

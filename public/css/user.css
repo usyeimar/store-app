@@ -5,11 +5,11 @@
     vertical-align: top;
     width: 200px;
     height: 400px;
-    border-right: solid 1px #ddd;
+    border-right: solid 2px #ddd;
 }
 
 #user-container #user-header{
-    background-color: rgb(34, 46, 63);
+    background-color:#1d91a0;
     padding: 40px;
 }
 #user-container #user-info-container{

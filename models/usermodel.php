@@ -1,6 +1,7 @@
 <?php
 class UserModel extends Model implements IModel{
     private $id;
+    private $secretid;
     private $username;
     private $password;
     private $role;
@@ -12,27 +13,31 @@ class UserModel extends Model implements IModel{
     private $direccion;
     private $telefono;
     private $fechanacimiento;
+    private $status;
 
 
     function __construct(){
         parent::__construct();
+        $this->secretid = 0;
         $this->username = '';
         $this->password = '';
         $this->role = '';
         $this->budget = 0.0;
-        $this->photo = '';
+        $this->photo = '7ff6d806e3014936d89059f2451992a6.png';
         $this->name = '';
         $this->email = '';
         $this->ciudad = '';
         $this->direccion = '';
         $this->telefono = '';
         $this->fechanacimiento = '';
+        $this->status = 'Activo ahora';
     }
 
     public function save(){
         try {
-            $query = $this->prepare('INSERT INTO tbusers(username,password,role,budget,photo,name,email,ciudad,direccion,telefono,fechanacimiento) VALUES(:username,:password,:role,:budget,:photo,:name,:email,:ciudad,:direccion,:telefono,:fechanacimiento)');
+            $query = $this->prepare('INSERT INTO tbusers(secret_id,username,password,role,budget,photo,name,email,ciudad,direccion,telefono,fechanacimiento,status) VALUES(:secretid,:username,:password,:role,:budget,:photo,:name,:email,:ciudad,:direccion,:telefono,:fechanacimiento,:status)');
             $query->execute([
+                'secret_id' =>          $this->secretid,
                 'username' =>           $this->username,
                 'password' =>           $this->password,
                 'role' =>                $this->role,
@@ -44,6 +49,7 @@ class UserModel extends Model implements IModel{
                 'direccion' =>           $this->direccion,
                 'telefono' =>            $this->telefono,
                 'fechanacimiento' =>     $this->fechanacimiento,
+                'status' =>              $this->status,
             ]);
             return true;
         } catch (PDOException $e) {
@@ -61,6 +67,7 @@ class UserModel extends Model implements IModel{
             while ($p = $query->fetch(PDO::FETCH_ASSOC)) {
                 $item = new UserModel();
                 $item->setId($p['id']);
+                $item->setSecretId($p['secret_id']);
 
                 $item->setUsername($p['username']);
                 $item->setPassword($p['password']);
@@ -73,7 +80,7 @@ class UserModel extends Model implements IModel{
                 $item->setDireccion($p['direccion']);
                 $item->setTelefono($p['telefono']);
                 $item->setFechaNacimiento($p['fechanacimiento']);
-
+                $item->setStatus($p['status']);
                 array_push($items,$item);
             }
             return $items;
@@ -90,6 +97,7 @@ class UserModel extends Model implements IModel{
             ]);
                 $user = $query->fetch(PDO::FETCH_ASSOC); 
                 $this->setId($user['id']);
+                $this->setSecretId($user['secret_id']);
                 $this->setUsername($user['username']);
                 $this->setPassword($user['password']);
                 $this->setRole($user['role']);
@@ -101,6 +109,7 @@ class UserModel extends Model implements IModel{
                 $this->setDireccion($user['direccion']);
                 $this->setTelefono($user['telefono']);
                 $this->setFechaNacimiento($user['fechanacimiento']);
+                $this->setStatus($user['status']);
             
             return $this;
         } catch (PDOException $e) {
@@ -125,9 +134,10 @@ class UserModel extends Model implements IModel{
 
     public function update() {
         try {
-            $query = $this->prepare('UPDATE tbusers SET username = :username, password = :password, budget = :budget, photo = :photo, name = :name, ciudad = :ciudad, direccion = :direccion, telefono = :telefono, fechanacimiento = :fechanacimiento  WHERE id = :id');
+            $query = $this->prepare('UPDATE tbusers SET secret_id = :secretid, username = :username, password = :password, budget = :budget, photo = :photo, name = :name, ciudad = :ciudad, direccion = :direccion, telefono = :telefono, fechanacimiento = :fechanacimiento  WHERE id = :id');
             $query->execute([
                 'id' =>                  $this->id,
+                'secret_id' =>           $this->secretid,
                 'username' =>            $this->username,
                 'password' =>            $this->password, 
                 'budget' =>              $this->budget,
@@ -138,6 +148,7 @@ class UserModel extends Model implements IModel{
                 'direccion' =>           $this->direccion,
                 'telefono' =>            $this->telefono,
                 'fechanacimiento' =>     $this->fechanacimiento,
+                'status' =>              $this->status,
             ]);
             return true;
         } catch (PDOException $e) {
@@ -148,6 +159,7 @@ class UserModel extends Model implements IModel{
 
     public function from($array){
         $this->id               = $array['id'];
+        $this->secretid        = $array['secret_id'];
         $this->username         = $array['username'];
         $this->password         = $array['password'];
         $this->role             = $array['role'];
@@ -158,7 +170,8 @@ class UserModel extends Model implements IModel{
         $this->ciudad           = $array['ciudad'];
         $this->direccion        = $array['direccion'];
         $this->telefono         = $array['telefono'];
-        $this->fechanacimiento  = $array['fechanacimiento']; 
+        $this->fechanacimiento  = $array['fechanacimiento'];
+        $this->status           = $array['status']; 
     }
 
     public function exists($username) {
@@ -207,17 +220,22 @@ class UserModel extends Model implements IModel{
     public function setDireccion($direccion){                   $this->direccion = $direccion;}
     public function setTelefono($telefono){                     $this->telefono = $telefono;}
     public function setFechaNacimiento($fechanacimiento){       $this->fechanacimiento = $fechanacimiento;}
+    public function setStatus($status){                         $this->status = $status;}
+    public function setSecretId($secretid){                     $this->secretid = $secretid;}
 
     public function getId()                 {return $this->id;}
     public function getUsername()           {return $this->username;}
     public function getPassword()           {return $this->password; }
     public function getRole()               {return $this->role;}
     public function getBudget()             {return $this->budget;}
-    public function getemail()              {return $this->email;}
+    public function getEmail()              {return $this->email;}
     public function getPhoto()              {return $this->photo;}
     public function getName()               {return $this->name;}
     public function getCiudad()             {return $this->ciudad;}
     public function getDireccion()          {return $this->direccion;}
     public function getTelefono()           {return $this->telefono;}
     public function getFechaNacimiento()    {return $this->fechanacimiento;}
+    public function getStatus()             {return $this->status;}
+    public function getSecretId()           {return $this->secretid;}
+    
 }

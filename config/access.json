@@ -18,7 +18,7 @@
         {
             "site" : "archivos", 
             "access" : "private", 
-            "role" : "admin"
+            "role" : "user"
         },
         {
             "site" : "categoriasFile", 
@@ -33,7 +33,7 @@
         {
             "site" : "chat", 
             "access" : "private", 
-            "role" : "admin"
+            "role" : "user"
         },
         {
             "site" : "dashboard", 

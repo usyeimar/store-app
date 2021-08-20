@@ -1,31 +1,13 @@
 <?php
-
-// session_start();
-// error_reporting(0);
-// $UserSession = $_SESSION['usuario'];
-// $idUserSession = $_SESSION['idUsuario'];
-// require_once("../../Class/ConexionDB.php");
-// $Conexion = new ConexionDB();
-// $NomUser = $_SESSION['usuario'];
-// $sql = "SELECT * FROM tbusuarios WHERE NomUsuario = '$NomUser'";
-// $consulta = $Conexion->EstablecerConexion()->query($sql);
-// $resultado = mysqli_fetch_array($consulta);
-// $imagen = $resultado['AvatarUsuario'];
-
-// if (!isset($UserSession)) {
-//   header("location: ../../");
-// }
-// $sql = "SELECT * FROM tbusuarios WHERE NomUsuario = '$UserSession'";
-// $query = $Conexion->EstablecerConexion()->query($sql);
-
-// $UserData = mysqli_fetch_array($query);
-// $imagen = $UserData['AvatarUsuario'];
+require_once'models/usermodel.php';
 $url = isset($_GET['url']) ? $_GET['url'] : null;
 $url = rtrim($url, '/');
 $url = explode('/', $url);
 
 $title  = $url[0];
+
 ?>
+
 <!doctype html>
 <html lang="en">
 

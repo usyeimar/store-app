@@ -150,6 +150,14 @@ require_once("Views/templates/HeaderAdmin.php");
                                                                         <td>Role :</td>
                                                                         <td><?php echo $user->getRole(); ?></td>
                                                                     </tr>
+                                                                    <tr>
+                                                                        <td>Status :</td>
+                                                                        <td><?php echo $user->getStatus(); ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>ID Secreta :</td>
+                                                                        <td><?php echo $user->getSecretId(); ?></td>
+                                                                    </tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>

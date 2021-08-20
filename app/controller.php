@@ -6,7 +6,7 @@ class Controller{
 
 
     function LoadModel($model){
-        $url = 'Models/' . $model. 'model.php';
+        $url = 'models/' . $model. 'model.php';
         if (file_exists($url)) {
             require_once $url;
             $modelName = $model. 'Model';

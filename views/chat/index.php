@@ -1,4 +1,5 @@
 <?php
+$user = $this->d['user'];
 require_once("Views/templates/HeaderAdmin.php");
 ?>
 
@@ -40,14 +41,18 @@ require_once("Views/templates/HeaderAdmin.php");
                       <section>
 
 
-                        
+
                         <div class="wrapper">
                           <section class="users">
                             <header>
                               <div class="content">
-                                <img src="<?php echo constant('URL')?>/public/images/usuario.png" alt="">
+                                <?php if ($user->getPhoto() != '') { ?>
+                                  <img src="public/img/photos/<?php echo $user->getPhoto(); ?>" width="200" />
+                                <?php }
+                                ?>
                                 <div class="details">
-                                 
+                                  <span><?php echo strtoupper(($user->getName() != '') ? $user->getName() : $user->getUsername()); ?></span>
+                                  <p><?php echo ucfirst($user->getStatus()); ?></p>
                                 </div>
                               </div>
                             </header>
@@ -62,11 +67,8 @@ require_once("Views/templates/HeaderAdmin.php");
                           </section>
                         </div>
 
-
-
-
                       </section>
-
+                     
                     </div>
                   </div>
                 </div>

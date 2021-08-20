@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Login
-       
+
     </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -15,13 +15,13 @@
 </head>
 
 <body>
-<?php 
-$this->showMessages();
-?>
+    <?php
+    $this->showMessages();
+    ?>
     <div class="wrapper">
         <div id="formContent">
-             <!-- Icon -->
-             <div>
+            <!-- Icon -->
+            <div>
                 <img src="<?php echo constant('URL') ?>/public/login_libs/icon.svg" id="icon" alt="User Icon" />
             </div>
 
@@ -33,16 +33,16 @@ $this->showMessages();
                 </h4>
             </div>
 
-           
+
             <!-- Login Form -->
             <form method="POST" action="login/authenticate">
                 <input type="text" id="txtUsuario" name="username" placeholder="Usuario" required>
                 <input type="password" id="txtContrasena" name="password" placeholder="Contraseña" required>
-                
+
                 <div class="loginButton">
                     <input type="submit" value="Iniciar Sesión">
                 </div>
-                
+
             </form>
 
             <!-- Remind Passowrd -->
@@ -54,9 +54,9 @@ $this->showMessages();
 
         </div>
     </div>
+
     
 
-   
 
 </body>
 

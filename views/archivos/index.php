@@ -1,4 +1,5 @@
 <?php
+$user = $this->d['user'];
 require_once("Views/templates/HeaderAdmin.php");
 ?>
 

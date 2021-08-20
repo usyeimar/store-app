@@ -49,3 +49,4 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  define('CHARSET','utf8mb4');
 
  define('COMPANY_NAME',"Store");
+
