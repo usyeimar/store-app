@@ -25,7 +25,7 @@
                         <a class="dropdown-item" href="user"><i class="fas fa-user-cog"></i> Mi perfil</a>
                         <a class="dropdown-item" href="#">Suscripciones</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="Commands/CerrarSession.php"><i style="color: red" class="fas fa-power-off"></i> Salir</a>
+                        <a class="dropdown-item" href="<?php echo constant('URL'); ?>/logout"><i style="color: red" class="fas fa-power-off"></i> Salir</a>
                     </div>
                 </li>
             </ul>

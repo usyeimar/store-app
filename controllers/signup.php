@@ -38,6 +38,7 @@ class Signup extends SessionController
             $user->setDireccion($direccion);
             $user->setTelefono($telefono);
             $user->setFechaNacimiento($fechanacimiento);
+            $user->setStatus('Activo ahora');
             
             if($user->exists($username)){
                 //$this->errorAtSignup('Error al registrar el usuario. Elige un nombre de usuario diferente');

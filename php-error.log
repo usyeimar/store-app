@@ -1,144 +1,53 @@
-[20-Aug-2021 01:23:02 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:23:02 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:23:02 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup, url => signup
-[20-Aug-2021 01:23:02 America/Bogota] sessionController::isPublic(): currentURL => signup
-[20-Aug-2021 01:23:02 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:23:02 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:23:02 America/Bogota] Signup::Carga el signup de Usuarios
-[20-Aug-2021 01:23:08 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:23:09 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:23:09 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup/newUser, url => signup
-[20-Aug-2021 01:23:09 America/Bogota] sessionController::isPublic(): currentURL => signup
-[20-Aug-2021 01:23:09 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:23:09 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:23:09 America/Bogota] USERMODEL::exists->PDOExceptionPDOException: SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters in C:\xampp\htdocs\store-app\app\model.php:14
-Stack trace:
-#0 C:\xampp\htdocs\store-app\app\model.php(14): PDO->prepare('SELECT username...')
-#1 C:\xampp\htdocs\store-app\models\usermodel.php(179): Model->prepare('SELECT username...')
-#2 C:\xampp\htdocs\store-app\controllers\signup.php(42): UserModel->exists('accountsauthent...')
-#3 C:\xampp\htdocs\store-app\app\app.php(27): Signup->newUser()
-#4 C:\xampp\htdocs\store-app\index.php(27): App->__construct()
-#5 {main}
-[20-Aug-2021 01:23:09 America/Bogota] USERMODEL::save->PDOExceptionPDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\store-app\models\usermodel.php:52
-Stack trace:
-#0 C:\xampp\htdocs\store-app\models\usermodel.php(52): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\store-app\controllers\signup.php(46): UserModel->save()
-#2 C:\xampp\htdocs\store-app\app\app.php(27): Signup->newUser()
-#3 C:\xampp\htdocs\store-app\index.php(27): App->__construct()
-#4 {main}
-[20-Aug-2021 01:23:09 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:23:10 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:23:10 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup?error=1fdce6bbf47d6b26a9cd809ea1910222, url => signup?error=1fdce6bbf47d6b26a9cd809ea1910222
-[20-Aug-2021 01:23:10 America/Bogota] sessionController::isPublic(): currentURL => signup?error=1fdce6bbf47d6b26a9cd809ea1910222
-[20-Aug-2021 01:23:10 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:23:10 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:23:10 America/Bogota] View::handleError() existsKey =>Hubo un error al intentar registrarte. Intenta de nuevo
-[20-Aug-2021 01:23:10 America/Bogota] Signup::Carga el signup de Usuarios
-[20-Aug-2021 01:25:13 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:25:13 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:25:13 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup, url => signup
-[20-Aug-2021 01:25:13 America/Bogota] sessionController::isPublic(): currentURL => signup
-[20-Aug-2021 01:25:13 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:25:13 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:25:14 America/Bogota] Signup::Carga el signup de Usuarios
-[20-Aug-2021 01:25:19 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:25:19 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:25:19 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup/newUser, url => signup
-[20-Aug-2021 01:25:20 America/Bogota] sessionController::isPublic(): currentURL => signup
-[20-Aug-2021 01:25:20 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:25:20 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:25:20 America/Bogota] USERMODEL::exists->PDOExceptionPDOException: SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters in C:\xampp\htdocs\store-app\app\model.php:14
-Stack trace:
-#0 C:\xampp\htdocs\store-app\app\model.php(14): PDO->prepare('SELECT username...')
-#1 C:\xampp\htdocs\store-app\models\usermodel.php(179): Model->prepare('SELECT username...')
-#2 C:\xampp\htdocs\store-app\controllers\signup.php(42): UserModel->exists('accountsauthent...')
-#3 C:\xampp\htdocs\store-app\app\app.php(27): Signup->newUser()
-#4 C:\xampp\htdocs\store-app\index.php(27): App->__construct()
-#5 {main}
-[20-Aug-2021 01:25:20 America/Bogota] USERMODEL::save->PDOExceptionPDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\store-app\models\usermodel.php:52
-Stack trace:
-#0 C:\xampp\htdocs\store-app\models\usermodel.php(52): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\store-app\controllers\signup.php(46): UserModel->save()
-#2 C:\xampp\htdocs\store-app\app\app.php(27): Signup->newUser()
-#3 C:\xampp\htdocs\store-app\index.php(27): App->__construct()
-#4 {main}
-[20-Aug-2021 01:25:20 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:25:20 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:25:20 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup?error=1fdce6bbf47d6b26a9cd809ea1910222, url => signup?error=1fdce6bbf47d6b26a9cd809ea1910222
-[20-Aug-2021 01:25:20 America/Bogota] sessionController::isPublic(): currentURL => signup?error=1fdce6bbf47d6b26a9cd809ea1910222
-[20-Aug-2021 01:25:20 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:25:20 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:25:20 America/Bogota] View::handleError() existsKey =>Hubo un error al intentar registrarte. Intenta de nuevo
-[20-Aug-2021 01:25:20 America/Bogota] Signup::Carga el signup de Usuarios
-[20-Aug-2021 01:27:52 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:27:52 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:27:52 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup, url => signup
-[20-Aug-2021 01:27:52 America/Bogota] sessionController::isPublic(): currentURL => signup
-[20-Aug-2021 01:27:52 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:27:52 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:27:52 America/Bogota] Signup::Carga el signup de Usuarios
-[20-Aug-2021 01:28:20 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:28:20 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:28:20 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup/newUser, url => signup
-[20-Aug-2021 01:28:20 America/Bogota] sessionController::isPublic(): currentURL => signup
-[20-Aug-2021 01:28:20 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:28:20 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:28:21 America/Bogota] USERMODEL::exists->PDOExceptionPDOException: SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters in C:\xampp\htdocs\store-app\app\model.php:14
-Stack trace:
-#0 C:\xampp\htdocs\store-app\app\model.php(14): PDO->prepare('SELECT username...')
-#1 C:\xampp\htdocs\store-app\models\usermodel.php(179): Model->prepare('SELECT username...')
-#2 C:\xampp\htdocs\store-app\controllers\signup.php(42): UserModel->exists('prueba20')
-#3 C:\xampp\htdocs\store-app\app\app.php(27): Signup->newUser()
-#4 C:\xampp\htdocs\store-app\index.php(27): App->__construct()
-#5 {main}
-[20-Aug-2021 01:28:21 America/Bogota] USERMODEL::save->PDOExceptionPDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\store-app\models\usermodel.php:52
-Stack trace:
-#0 C:\xampp\htdocs\store-app\models\usermodel.php(52): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\store-app\controllers\signup.php(46): UserModel->save()
-#2 C:\xampp\htdocs\store-app\app\app.php(27): Signup->newUser()
-#3 C:\xampp\htdocs\store-app\index.php(27): App->__construct()
-#4 {main}
-[20-Aug-2021 01:28:21 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:28:21 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:28:21 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup?error=1fdce6bbf47d6b26a9cd809ea1910222, url => signup?error=1fdce6bbf47d6b26a9cd809ea1910222
-[20-Aug-2021 01:28:21 America/Bogota] sessionController::isPublic(): currentURL => signup?error=1fdce6bbf47d6b26a9cd809ea1910222
-[20-Aug-2021 01:28:21 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:28:21 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:28:21 America/Bogota] View::handleError() existsKey =>Hubo un error al intentar registrarte. Intenta de nuevo
-[20-Aug-2021 01:28:21 America/Bogota] Signup::Carga el signup de Usuarios
-[20-Aug-2021 01:29:55 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:29:55 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:29:55 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup, url => signup
-[20-Aug-2021 01:29:55 America/Bogota] sessionController::isPublic(): currentURL => signup
-[20-Aug-2021 01:29:55 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:29:55 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:29:55 America/Bogota] Signup::Carga el signup de Usuarios
-[20-Aug-2021 01:29:59 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:29:59 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:29:59 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup/newUser, url => signup
-[20-Aug-2021 01:29:59 America/Bogota] sessionController::isPublic(): currentURL => signup
-[20-Aug-2021 01:29:59 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:29:59 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:30:00 America/Bogota] USERMODEL::exists->PDOExceptionPDOException: SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters in C:\xampp\htdocs\store-app\app\model.php:14
-Stack trace:
-#0 C:\xampp\htdocs\store-app\app\model.php(14): PDO->prepare('SELECT username...')
-#1 C:\xampp\htdocs\store-app\models\usermodel.php(179): Model->prepare('SELECT username...')
-#2 C:\xampp\htdocs\store-app\controllers\signup.php(42): UserModel->exists('prueba20')
-#3 C:\xampp\htdocs\store-app\app\app.php(27): Signup->newUser()
-#4 C:\xampp\htdocs\store-app\index.php(27): App->__construct()
-#5 {main}
-[20-Aug-2021 01:30:00 America/Bogota] USERMODEL::save->PDOExceptionPDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\xampp\htdocs\store-app\models\usermodel.php:52
-Stack trace:
-#0 C:\xampp\htdocs\store-app\models\usermodel.php(52): PDOStatement->execute(Array)
-#1 C:\xampp\htdocs\store-app\controllers\signup.php(46): UserModel->save()
-#2 C:\xampp\htdocs\store-app\app\app.php(27): Signup->newUser()
-#3 C:\xampp\htdocs\store-app\index.php(27): App->__construct()
-#4 {main}
-[20-Aug-2021 01:30:00 America/Bogota] Sytem Start, errors!
-[20-Aug-2021 01:30:00 America/Bogota] SessionController::validateSession()
-[20-Aug-2021 01:30:00 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/signup?error=1fdce6bbf47d6b26a9cd809ea1910222, url => signup?error=1fdce6bbf47d6b26a9cd809ea1910222
-[20-Aug-2021 01:30:00 America/Bogota] sessionController::isPublic(): currentURL => signup?error=1fdce6bbf47d6b26a9cd809ea1910222
-[20-Aug-2021 01:30:00 America/Bogota] SessionController::validateSession() public page
-[20-Aug-2021 01:30:00 America/Bogota] Construct::Inicio de Signup
-[20-Aug-2021 01:30:00 America/Bogota] View::handleError() existsKey =>Hubo un error al intentar registrarte. Intenta de nuevo
-[20-Aug-2021 01:30:00 America/Bogota] Signup::Carga el signup de Usuarios
+[23-Aug-2021 01:54:13 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:54:13 America/Bogota] SessionController::validateSession()
+[23-Aug-2021 01:54:13 America/Bogota] sessionController::getUserSessionData(): yeimar
+[23-Aug-2021 01:54:13 America/Bogota] sessionController::validateSession(): username:yeimar - role: user
+[23-Aug-2021 01:54:13 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/user/updateName, url => user
+[23-Aug-2021 01:54:13 America/Bogota] sessionController::isPublic(): currentURL => user
+[23-Aug-2021 01:54:13 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/user/updateName, url => user
+[23-Aug-2021 01:54:13 America/Bogota] SessionController::validateSession() => autorizado, lo deja pasar
+[23-Aug-2021 01:54:14 America/Bogota] sessionController::getUserSessionData(): yeimar
+[23-Aug-2021 01:54:14 America/Bogota] PHP Warning:  foreach() argument must be of type array|object, string given in C:\xampp\htdocs\store-app\app\controller.php on line 18
+[23-Aug-2021 01:54:15 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:54:15 America/Bogota] SessionController::validateSession()
+[23-Aug-2021 01:54:15 America/Bogota] sessionController::getUserSessionData(): yeimar
+[23-Aug-2021 01:54:15 America/Bogota] sessionController::validateSession(): username:yeimar - role: user
+[23-Aug-2021 01:54:15 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/user?success=2ee085ac8828407f4908e4d134195e5c, url => user?success=2ee085ac8828407f4908e4d134195e5c
+[23-Aug-2021 01:54:15 America/Bogota] sessionController::isPublic(): currentURL => user?success=2ee085ac8828407f4908e4d134195e5c
+[23-Aug-2021 01:54:15 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/user?success=2ee085ac8828407f4908e4d134195e5c, url => user?success=2ee085ac8828407f4908e4d134195e5c
+[23-Aug-2021 01:54:15 America/Bogota] SessionController::validateSession() => autorizado, lo deja pasar
+[23-Aug-2021 01:54:16 America/Bogota] sessionController::getUserSessionData(): yeimar
+[23-Aug-2021 01:54:16 America/Bogota] View::handleError() existsKey =>1
+[23-Aug-2021 01:54:16 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:54:16 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:54:16 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:54:16 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:54:16 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:54:16 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:57:56 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:57:56 America/Bogota] SessionController::validateSession()
+[23-Aug-2021 01:57:57 America/Bogota] sessionController::getUserSessionData(): yeimar
+[23-Aug-2021 01:57:57 America/Bogota] sessionController::validateSession(): username:yeimar - role: user
+[23-Aug-2021 01:57:57 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/user/updateName, url => user
+[23-Aug-2021 01:57:57 America/Bogota] sessionController::isPublic(): currentURL => user
+[23-Aug-2021 01:57:57 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/user/updateName, url => user
+[23-Aug-2021 01:57:57 America/Bogota] SessionController::validateSession() => autorizado, lo deja pasar
+[23-Aug-2021 01:57:57 America/Bogota] sessionController::getUserSessionData(): yeimar
+[23-Aug-2021 01:57:57 America/Bogota] PHP Warning:  foreach() argument must be of type array|object, string given in C:\xampp\htdocs\store-app\app\controller.php on line 18
+[23-Aug-2021 01:57:57 America/Bogota] ExistPOST: Existen parámetros
+[23-Aug-2021 01:57:57 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:57:57 America/Bogota] SessionController::validateSession()
+[23-Aug-2021 01:57:58 America/Bogota] sessionController::getUserSessionData(): yeimar
+[23-Aug-2021 01:57:58 America/Bogota] sessionController::validateSession(): username:yeimar - role: user
+[23-Aug-2021 01:57:58 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/user?success=2ee085ac8828407f4908e4d134195e5c, url => user?success=2ee085ac8828407f4908e4d134195e5c
+[23-Aug-2021 01:57:58 America/Bogota] sessionController::isPublic(): currentURL => user?success=2ee085ac8828407f4908e4d134195e5c
+[23-Aug-2021 01:57:58 America/Bogota] sessionController::getCurrentPage(): actualLink =>/store-app/user?success=2ee085ac8828407f4908e4d134195e5c, url => user?success=2ee085ac8828407f4908e4d134195e5c
+[23-Aug-2021 01:57:58 America/Bogota] SessionController::validateSession() => autorizado, lo deja pasar
+[23-Aug-2021 01:57:58 America/Bogota] sessionController::getUserSessionData(): yeimar
+[23-Aug-2021 01:57:58 America/Bogota] View::handleError() existsKey =>1
+[23-Aug-2021 01:57:58 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:57:59 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:57:59 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:57:59 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:57:59 America/Bogota] Sytem Start, errors!
+[23-Aug-2021 01:57:59 America/Bogota] Sytem Start, errors!

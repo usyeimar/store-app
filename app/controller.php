@@ -15,14 +15,16 @@ class Controller{
     }
 
     function existPOST($params){
-        foreach ($params as $param){
-            if (!isset($_POST[$param])) {
-                error_log('CONTROLLER::existPost => No existe el parametro' . $param);
+        foreach ($params as $param) {
+            if(!isset($_POST[$param])){
+                error_log("ExistPOST: No existe el parametro $param" );
                 return false;
-            }   
+            }
         }
+        error_log( "ExistPOST: Existen parámetros" );
         return true;
     }
+
 
     function existGET($params){
         foreach ($params as $param){

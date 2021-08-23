@@ -32,23 +32,27 @@ class User extends SessionController
             return;
         }
     }
-    function updateName()
-    {
-        if (!$this->existPost('name')) {
-            $this->redirect('user', []); //TODO:
+    function updateName(){
+        if(!$this->existPOST('name')){
+            $this->redirect('user', ['error' => ErrorMessages::ERROR_USER_UPDATEBUDGET]);
             return;
         }
+
         $name = $this->getPost('name');
-        if (empty($name) || $name == NULL) {
-            $this->redirect('user', []);
+
+        if(empty($name)){
+            $this->redirect('user', ['error' => ErrorMessages::ERROR_USER_UPDATEBUDGET]);
             return;
         }
+        
         $this->user->setName($name);
-        if ($this->user->update()) {
-            $this->redirect('user', []);
-            return;
+        if($this->user->update()){
+            $this->redirect('user', ['success' => SuccessMessages::SUCCESS_USER_UPDATEBUDGET]);
+        }else{
+            //error
         }
     }
+
     function updatePassword()
     {
         if (!$this->existPOST(['current_password', 'new_password'])) {
@@ -84,43 +88,44 @@ class User extends SessionController
             return;
         }
     }
-    function updatePhoto()
-    {
-        if (!isset($_FILES['photo'])) {
-            $this->redirect('user',[]);
+    
+    function updatePhoto(){
+        if(!isset($_FILES['photo'])){
+            $this->redirect('user', ['error' => ErrorMessages::ERROR_USER_UPDATEPHOTO]);
             return;
         }
         $photo = $_FILES['photo'];
-        $targetDir = 'public/img/photos/';
-        $extension = explode('.', $photo['name']);
-        $filename = $extension[sizeof($extension) -2];
-        $ext = $extension[sizeof($extension) -1];
+
+        $target_dir = "public/img/photos/";
+        $extarr = explode('.',$photo["name"]);
+        $filename = $extarr[sizeof($extarr)-2];
+        $ext = $extarr[sizeof($extarr)-1];
         $hash = md5(Date('Ymdgi') . $filename) . '.' . $ext;
-        $targetFile = $targetDir . $hash;
-        $uploadOK = 1;
-        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-        $check = getimagesize($photo['tmp_name']);
-        if($check !== false){
-            $uploadOk = true;
-        }else{
-            $uploadOK = false;
+        $target_file = $target_dir . $hash;
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        
+        $check = getimagesize($photo["tmp_name"]);
+        if($check !== false) {
+            //echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            //echo "File is not an image.";
+            $uploadOk = 0;
         }
 
-        if(!$uploadOK){
-            $this->redirect('user',[]);
-            return;
-        }else{
-            if(move_uploaded_file($photo['tmp_name'],$targetFile)){
-                $this->user->setPhoto($hash);
-                $this->user->update();
-                $this->redirect('user',[]);
-                return;
-            }else{
-                $this->redirect('user',[]);
-                return;
+        if ($uploadOk == 0) {
+            //echo "Sorry, your file was not uploaded.";
+            $this->redirect('user', ['error' => ErrorMessages::ERROR_USER_UPDATEPHOTO_FORMAT]);
+        // if everything is ok, try to upload file
+        } else {
+            if (move_uploaded_file($photo["tmp_name"], $target_file)) {
+                $this->model->updatePhoto($hash, $this->user->getId());
+                $this->redirect('user', ['success' => SuccessMessages::SUCCESS_USER_UPDATEPHOTO]);
+            } else {
+                $this->redirect('user', ['error' => ErrorMessages::ERROR_USER_UPDATEPHOTO]);
             }
-
         }
-
+        
     }
 }

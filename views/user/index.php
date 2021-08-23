@@ -87,7 +87,7 @@ require_once("Views/templates/HeaderAdmin.php");
 
                                                         <div class="tab-pane fade" id="password-user-container">
                                                             <div class="tile-body">
-                                                                <form class="form-group" action="<?php echo constant('URL') . 'user/updatePassword' ?>" method="POST">
+                                                                <form class="form-group" action="<?php echo constant('URL') . '/user/updatePassword' ?>" method="POST">
                                                                     <div class="section">
                                                                         <label class="label-control" for="current_password">Password actual</label>
                                                                         <input class="form-control" type="password" name="current_password" id="current_password" autocomplete="off" required>
@@ -102,7 +102,7 @@ require_once("Views/templates/HeaderAdmin.php");
 
                                                         </div>
                                                         <div class="tab-pane fade" id="budget-user-container">
-                                                            <form action="/user/updateBudget" method="POST">
+                                                            <form action="<?php echo constant('URL') .'/user/updateBudget' ?>" method="POST">
                                                                 <div class="section">
                                                                     <label class="label-control" for="budget">Definir presupuesto</label>
                                                                     <div><input class="form-control" type="number" name="budget" id="budget" autocomplete="off" required value="<?php echo $user->getBudget() ?>"></div>
@@ -113,7 +113,7 @@ require_once("Views/templates/HeaderAdmin.php");
                                                         </div>
                                                         
                                                         <div class="tab-pane fade" id="user-info-settings">
-                                                            <h4>Mi informacion <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#ModalUpdateUsuario" type="button"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button></h4>
+                                                            <h4>Mi informacion <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#user-update" type="button"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button></h4>
                                                             <table class="table table-bordered">
                                                                 <tbody>
                                                                    
@@ -176,6 +176,7 @@ require_once("Views/templates/HeaderAdmin.php");
         </div>
         <?php 
         require_once("Views/templates/FooterAdmin.php");
+        require_once("views/Modals/update/userUpdate.php")
 
         ?>
     </div>

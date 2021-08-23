@@ -9,10 +9,11 @@ function __construct()
 function searUser($searchTerm){
 try {
     $query = $this->prepare("");
-} catch (\Throwable $e) {
-    # code...
+} catch (PDOException $e) {
+    echo "La conexion ";
 }
     
+}
 }
 
     
