@@ -11,6 +11,11 @@
             "role" : ""
         },
         {
+            "site" : "recover", 
+            "access" : "public", 
+            "role" : ""
+        },
+        {
             "site" : "home", 
             "access" : "private", 
             "role" : "user"

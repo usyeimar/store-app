@@ -19,6 +19,7 @@ class ErrorMessages{
     const ERROR_SIGNUP_NEWUSER                   = "1fdce6bbf47d6b26a9cd809ea1910222";
     const ERROR_SIGNUP_NEWUSER_EMPTY             = "a5bcd7089d83f45e17e989fbc86003ed";
     const ERROR_SIGNUP_NEWUSER_EXISTS            = "a74accfd26e06d012266810952678cf3";
+    const ERROR_RECOVER_EMAIL_NOTEXIST           ="206261102b73992f30c16c7172891c7e";
 
     private $errorList = [];
     public function __construct()
@@ -43,6 +44,7 @@ class ErrorMessages{
             ErrorMessages::ERROR_SIGNUP_NEWUSER            => 'Hubo un error al intentar registrarte. Intenta de nuevo',
             ErrorMessages::ERROR_SIGNUP_NEWUSER_EMPTY      => 'Los campos no pueden estar vacíos',
             ErrorMessages::ERROR_SIGNUP_NEWUSER_EXISTS     => 'El nombre de usuario ya existe, selecciona otro',
+            ErrorMessages::ERROR_RECOVER_EMAIL_NOTEXIST    => 'El correo electrónico no se encuentra registrado en el sistema',
 
         ];
     }

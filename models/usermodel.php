@@ -264,6 +264,45 @@ class UserModel extends Model implements IModel{
        return password_hash($password, PASSWORD_DEFAULT, ['cost' => 10]); 
     }
 
+     /**
+     * Obtener una persona con correo Electronico
+     * @param string $p_correoElectronico
+     */
+    function getUserWithEmail($email)
+    {
+        try {
+            $query = $this->prepare('SELECT * FROM tbusers WHERE email = :email LIMIT 1');
+            $query->execute(['email' => $email]);
+            if ($query->rowcount()>0) {
+                return true;
+            }else{
+                return false;
+            }
+
+        } catch (PDOException $e){
+            error_log('USERMODEL::getUserWithEmail->' . $e);
+            return false;
+
+        }   
+    }
+
+    function recoverPassword($email, $codigo, $recoverydate)
+    {
+        try {
+
+            $query = $this->prepare('UPDATE tbusers SET codigo = :codigo,recoverydate = :recoverydate WHERE email = :email');
+            $query->execute([
+                'codigo' => $codigo,
+                'recoverydate' => $recoverydate,
+                'email' => $email
+            ]);
+        } catch (PDOException $e) {
+            error_log('USERMODEL::recoverPassword->' . $e);
+            return false;
+        }   
+    }
+
+
     public function setId($id){                                 $this->id = $id;}
     public function setSecretId($secretid){                     $this->secretid = $secretid;}
     public function setRole($role){                             $this->role = $role;}

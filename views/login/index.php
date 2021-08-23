@@ -49,7 +49,7 @@
             <div id="formFooter">
                 <a class="underlineHover" href="signup">No tienes cuenta, registrate.</a>
                 <br>
-                <a class="underlineHover" href="login/recover">¿Olvidaste la contraseña?</a>
+                <a class="underlineHover" href="recover">¿Olvidaste la contraseña?</a>
             </div>
 
         </div>

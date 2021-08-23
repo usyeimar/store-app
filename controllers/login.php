@@ -10,6 +10,7 @@ class Login extends SessionController{
     {
         error_log('Login::render -> Carga el index de Login');
         $this->view->render('login/index');
+       
     }
 
     function authenticate(){
