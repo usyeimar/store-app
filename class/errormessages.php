@@ -19,7 +19,10 @@ class ErrorMessages{
     const ERROR_SIGNUP_NEWUSER                   = "1fdce6bbf47d6b26a9cd809ea1910222";
     const ERROR_SIGNUP_NEWUSER_EMPTY             = "a5bcd7089d83f45e17e989fbc86003ed";
     const ERROR_SIGNUP_NEWUSER_EXISTS            = "a74accfd26e06d012266810952678cf3";
-    const ERROR_RECOVER_EMAIL_NOTEXIST           ="206261102b73992f30c16c7172891c7e";
+    const ERROR_RECOVER_EMAIL_NOTEXIST           = "206261102b73992f30c16c7172891c7e";
+    const ERROR_RECOVER_IWILLNOT_RECOVER_THE_ACCOUNT = "f86f3f289d02cb8ebbebbaefb153f568";
+    const ERROR_RECOVER_CODE_ISNOTVALID         = "286830616624d53316b50275d6084dee";
+    const ERROR_RECOVER_CODE_EXPIRED            = "089b694f379facfab43670761f274c72";
 
     private $errorList = [];
     public function __construct()
@@ -45,6 +48,9 @@ class ErrorMessages{
             ErrorMessages::ERROR_SIGNUP_NEWUSER_EMPTY      => 'Los campos no pueden estar vacíos',
             ErrorMessages::ERROR_SIGNUP_NEWUSER_EXISTS     => 'El nombre de usuario ya existe, selecciona otro',
             ErrorMessages::ERROR_RECOVER_EMAIL_NOTEXIST    => 'El correo electrónico no se encuentra registrado en el sistema',
+            ErrorMessages::ERROR_RECOVER_IWILLNOT_RECOVER_THE_ACCOUNT => 'No se recuperar la cuenta. Si los errores persisten comuniquese con el administrador del sitio.',
+            ErrorMessages::ERROR_RECOVER_CODE_ISNOTVALID   =>'El código de recuperación de contraseña no es valido. Por favor intenta de nuevo.',
+            ErrorMessages::ERROR_RECOVER_CODE_EXPIRED      =>'El código de recuperación de contraseña ha expirado. Por favor intenta de nuevo.',
 
         ];
     }

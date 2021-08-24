@@ -16,6 +16,11 @@
             "role" : ""
         },
         {
+            "site" : "newPassword", 
+            "access" : "public", 
+            "role" : ""
+        },
+        {
             "site" : "home", 
             "access" : "private", 
             "role" : "user"

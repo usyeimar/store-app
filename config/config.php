@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Configuration for: URL
  * Here we auto-detect your applications URL and the potential sub-folder. Works perfectly on most servers and in local
@@ -42,11 +43,14 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  * 
  */
 
- define('HOST','edusystemdb.cd6l3kpvdycv.us-east-1.rds.amazonaws.com');
- define('DB','store-app');
- define('USER','armagedon');
- define('PASSWORD','admindb1234');
- define('CHARSET','utf8mb4');
+define('HOST', 'edusystemdb.cd6l3kpvdycv.us-east-1.rds.amazonaws.com');
+define('DB', 'store-app');
+define('USER', 'armagedon');
+define('PASSWORD', 'admindb1234');
+define('CHARSET', 'utf8mb4');
 
- define('COMPANY_NAME',"Store");
+define('COMPANY_NAME', "Store");
 
+define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
+// set a constant that holds the project's "application" folder, like "/var/www/application".
+define('APP', ROOT . 'store-app' . DIRECTORY_SEPARATOR);

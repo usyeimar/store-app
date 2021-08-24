@@ -285,6 +285,29 @@ class UserModel extends Model implements IModel{
 
         }   
     }
+      /**
+     * Obtener una persona por el código generado para el cambio de contraseña
+     * @param string $p_codigo
+     */
+    function getUserWithCode($codigo)
+    {
+        try {
+
+            $query = $this->prepare('SELECT * FROM tbusers WHERE codigo = :codigo LIMIT 1');
+            $query->execute(['codigo' => $codigo]);
+
+            if ($query->rowcount()>0) {
+                return true;
+            }else{
+                return false;
+            }
+        } catch (PDOException $e) {
+
+            error_log('USERMODEL::getUserWithCode->' . $e);
+            return false;
+
+        } 
+    }
 
     function recoverPassword($email, $codigo, $recoverydate)
     {
@@ -296,6 +319,7 @@ class UserModel extends Model implements IModel{
                 'recoverydate' => $recoverydate,
                 'email' => $email
             ]);
+            return true;
         } catch (PDOException $e) {
             error_log('USERMODEL::recoverPassword->' . $e);
             return false;

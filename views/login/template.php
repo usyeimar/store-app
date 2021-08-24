@@ -44,7 +44,7 @@
         <table class="email-content" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 0; width: 100%;">
           <tr>
             <td class="email-masthead" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 25px 0; word-break: break-word;" align="center">
-              <a href="" class="email-masthead_name" style="box-sizing: border-box; color: #bbbfc3; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none; text-shadow: 0 1px 0 white;">
+              <a href="<?php echo URL; ?>" class="email-masthead_name" style="box-sizing: border-box; color: #bbbfc3; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; font-weight: bold; text-decoration: none; text-shadow: 0 1px 0 white;">
                 Cariniana
               </a>
             </td>
@@ -57,7 +57,7 @@
                 <tr>
                   <td class="content-cell" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; padding: 35px; word-break: break-word;">
                     <h1 style="box-sizing: border-box; color: #2F3133; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 19px; font-weight: bold; margin-top: 0;" align="left">Hola {{name}},</h1>
-                    <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Recientemente solicitó restablecer su contraseña para su cuenta en Variedades y Comunicaciones. Use el botón de abajo para reiniciarlo. <strong style="tamaño de caja: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"> Este restablecimiento de contraseña solo es válido durante las próximas 24 horas.</strong></p>
+                    <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Recientemente solicitó restablecer su contraseña para su cuenta en Store App-Cariniana. Use el botón de abajo para reiniciarlo. <strong style="tamaño de caja: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;"> Este restablecimiento de contraseña solo es válido durante las próximas 24 horas.</strong></p>
 
                     <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 30px auto; padding: 0; text-align: center; width: 100%;">
                       <tr>
@@ -81,8 +81,7 @@
                     </table>
                     <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left"> Por razones de seguridad, esta solicitud se recibió de un dispositivo {{operating_system}} usando {{browser_name}}. Si no solicitó restablecer la contraseña, ignore este correo electrónico o póngase en contacto con el servicio de asistencia si tiene alguna pregunta. </p>
                     <p style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 16px; line-height: 1.5em; margin-top: 0;" align="left">Gracias,
-                      <br />Equipo de Variedades y Comunicaciones
-                    </p>
+                      <br />Equipo Store-App Cariniana
 
                     <table class="body-sub" style="border-top-color: #EDEFF2; border-top-style: solid; border-top-width: 1px; box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin-top: 25px; padding-top: 25px;">
                       <tr>

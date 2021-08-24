@@ -1,4 +1,13 @@
 {
+    "authors": [
+        {
+            "name": "Yeimar Lemus",
+            "email": "yeimar112003@gmail.com",
+            "homepage": "https://github.com/Yeimar-IcloudDesing",
+            "role": "Project Manager"
+        }
+       
+    ],
     "require": {
         "phpmailer/phpmailer": "^6.5"
     }

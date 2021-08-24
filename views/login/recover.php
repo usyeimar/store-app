@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Password Recovery
+    <title>Restablcer - Contraseña
     </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -14,6 +14,9 @@
 </head>
 
 <body>
+<?php
+    $this->showMessages();
+    ?>
 
     <div class="wrapper">
         <div id="formContent">
@@ -31,7 +34,7 @@
             </div>
 
             <!-- Login Form -->
-            <form method="POST" action="<?php echo URL; ?>/login/sendRecoveryCode">
+            <form method="POST" action="<?php echo URL; ?>/recover/sendRecoveryCode">
                 <input type="email" id="txtCorreoElectronico" name="email" placeholder="Correo Electrónico">
                 
                 <div class="loginButton">
@@ -52,8 +55,8 @@
         var url = "<?php echo URL; ?>";
     </script>
 
-    <script src="<?php echo URL; ?>login_libs/jquery.min.js"></script>
-    <script src="<?php echo URL; ?>login_libs/bootstrap.min.js"></script>
+    <script src="<?php echo URL; ?>/public/login_libs/jquery.min.js"></script>
+    <script src="<?php echo URL; ?>/public/login_libs/bootstrap.min.js"></script>
 
     <?php if(isset($mensaje)){ ?>
 

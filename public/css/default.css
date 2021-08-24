@@ -58,6 +58,22 @@ a:hover {
     padding-bottom: 5rem;
 }
 
+/*
+Error 404
+*/
+.error-container{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 90vh;
+}
+.error-info{
+    text-align: center;
+}
+.error404{
+    font-size: 15em;
+    text-align: center;
+}
 .avatar {
     max-width: 35px;
 }

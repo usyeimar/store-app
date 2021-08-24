@@ -16,6 +16,8 @@
     <div class="wrapper">
         <div id="formContent">
             <!-- Tabs Titles -->
+            <!-- Icon -->
+            
 
             <div>
                 <h4>
@@ -23,19 +25,20 @@
                 </h4>
             </div>
 
+
             <!-- Login Form -->
             <form method="POST" action="<?php echo constant('URL') ?>/signup/newUser">
                 <input type="text" id="txtUsuario" name="username" placeholder="Usuario" required>
                 <input type="password" id="txtContrasena" name="password" placeholder="Contraseña" required>
-                <input type="email" id="txtEmail"name="email"  placeholder="Correo" required>
-                <input type="text" id="txtdireccion"name="direccion"  placeholder="Direccion" required>
-                <input type="text" id="txttelefono" name="telefono"  placeholder="Telefono" required>
+                <input type="email" id="txtEmail" name="email" placeholder="Correo" required>
+                <input type="text" id="txtdireccion" name="direccion" placeholder="Direccion" required>
+                <input type="text" id="txttelefono" name="telefono" placeholder="Telefono" required>
                 <div>
-                <label for="txtfechanacimiento">Fecha de Nacimiento</label>
-                <input type="date" id="txtfechanacimiento"name="fechanacimiento"  placeholder="Fecha Nacimiento" required>
+                    <label for="txtfechanacimiento">Fecha de Nacimiento</label>
+                    <input type="date" id="txtfechanacimiento" name="fechanacimiento" placeholder="Fecha Nacimiento" required>
                 </div>
-                
-               
+
+
 
                 <div class="loginButton">
                     <input id="btnGuardar" name="btnGuardar" type="submit" value="Guardar Usuario">
